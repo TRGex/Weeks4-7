@@ -9,6 +9,9 @@ public class EnableDisable : MonoBehaviour
     public SpriteRenderer sr;
     public EnableDisable script;
 
+    public AudioSource AudioSource;
+    public AudioClip clip;
+
     void Start()
     {
         
@@ -29,6 +32,16 @@ public class EnableDisable : MonoBehaviour
             go.SetActive(true);
 
             //go.activeInHierarchy;
+        }
+
+        if (Input.GetKey(KeyCode.Space))
+        {
+            if (!AudioSource.isPlaying)
+            {
+                //AudioSource.Play();
+                AudioSource.PlayOneShot(clip);
+            }
+            //AudioSource.clip.length
         }
     }
 }
